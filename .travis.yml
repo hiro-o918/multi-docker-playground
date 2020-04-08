@@ -9,7 +9,7 @@ scrpit:
   - pushd client && make dev/test && popd
 
 after_success:
-  - popd client && make build && popd
+  - pushd client && make build && popd
   - pushd worker && make build  && popd
   - pushd server && make build && popd
   - pushd nginx && make build && popd
