@@ -3,14 +3,13 @@ services:
   - docker
 
 before_install:
-  - cd client && make dev/build
+  - pushd client && make dev/build && popd
 
 scrpit:
-  - cd client && make dev/test
+  - pushd client && make dev/test && popd
 
 after_success:
-  - cd client && make build
-  - cd worker && make build
-  - cd server && make build
-  - cd nginx && make build
-  
+  - popd client && make build && popd
+  - pushd worker && make build  && popd
+  - pushd server && make build && popd
+  - pushd nginx && make build && popd
