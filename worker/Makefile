@@ -17,16 +17,6 @@ dev/run:
 		-v $(PWD):/app \
 		hiro918/dev-$(IMAGE_NAME):$(VTAG)
 
-.PHONY: dev/test
-dev/test:
-	docker run \
-		-e CI=true \
-		-it \
-		-v /app/node_modules \
-		-v $(PWD):/app \
-		hiro918/dev-$(IMAGE_NAME):$(VTAG) \
-		yarn run test 
-
 .PHONY: build
 build:
 	docker build \
