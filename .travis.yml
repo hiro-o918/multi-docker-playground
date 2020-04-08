@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - cd client && make dev/build
+
+scrpit:
+  - cd client && make dev/test
+
+after_success:
+  - cd client && make build
+  - cd worker && make build
+  - cd server && make build
+  - cd nginx && make build
+  
