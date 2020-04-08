@@ -13,3 +13,8 @@ after_success:
   - pushd worker && make build  && popd
   - pushd server && make build && popd
   - pushd nginx && make build && popd
+  - echo "$DOKERHUB_LOGIN_KEY" | docker login -u "$DOKERHUB_ID" --password-stdin
+  - docker push hiro918/k8s-complex-client
+  - docker push hiro918/k8s-complex-worker
+  - docker push hiro918/k8s-complex-server
+  - docker push hiro918/k8s-complex-nginx
