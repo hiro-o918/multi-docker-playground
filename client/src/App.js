@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          <h1>Fib calc ver2<h1>
+          <h1>Fib calc ver2</h1>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
         </header>
